@@ -1,0 +1,43 @@
+{
+  "name": "graphql-middleware",
+  "version": "0.0.1",
+  "engines": {
+    "node": "4.x"
+  },
+  "description": "GraphQL middleware for resolvers",
+  "main": "dist/graphql-middleware.js",
+  "keywords": [
+    "graphql",
+    "middleware",
+    "resolver"
+  ],
+  "scripts": {
+    "build-test": "npm run build && npm test",
+    "test": "./node_modules/.bin/mocha test-dist/test.js",
+    "build": "./node_modules/.bin/babel src --out-dir dist && ./node_modules/.bin/babel test --out-dir test-dist",
+    "preversion": "npm run build-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alekbarszczewski/graphql-middleware"
+  },
+  "author": "Alek Barszczewski <alek.barszczewski@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^0.9.1",
+    "koa-compose": "^3.2.1",
+    "graphql-tools": "^0.10.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-es2015-parameters": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-preset-es2015-node6": "^0.4.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.23.0",
+    "chai": "^3.5.0",
+    "graphql-query-tree": "^0.1.0",
+    "mocha": "^3.2.0"
+  }
+}

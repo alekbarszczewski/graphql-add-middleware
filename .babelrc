@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "es2015-node6",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-async-to-generator",
+    "transform-object-rest-spread",
+    "transform-es2015-parameters"
+  ]
+}
