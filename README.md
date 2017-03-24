@@ -1,12 +1,12 @@
 
-# graphql-middleware [![Build Status](https://travis-ci.org/alekbarszczewski/graphql-middleware.svg?branch=master)](https://travis-ci.org/alekbarszczewski/graphql-middleware)
+# graphql-add-middleware [![Build Status](https://travis-ci.org/alekbarszczewski/graphql-add-middleware.svg?branch=master)](https://travis-ci.org/alekbarszczewski/graphql-add-middleware)
 
 Easyli add middleware to GraphQL schema resolvers
 
 ## Installation
 
 ```sh
-$ npm install --save graphql-middleware
+$ npm install --save graphql-add-middleware
 ```
 
 ## Features
@@ -43,7 +43,7 @@ schema {
 ```
 
 ```js
-import { addMiddleware } from 'graphql-middleware';
+import { addMiddleware } from 'graphql-add-middleware';
 
 // add middleware to ALL resolvers (also to nested resolver if they are defined in schema like Post.author)
 addMiddleware(schema, async function (root, args, context, info, next) {

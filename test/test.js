@@ -3,7 +3,7 @@ import { makeExecutableSchema, addResolveFunctionsToSchema } from 'graphql-tools
 import { graphql } from 'graphql';
 import { expect } from 'chai';
 import GraphqlQueryTree from 'graphql-query-tree';
-import { addMiddleware } from './../dist/graphql-middleware';
+import { addMiddleware } from './../dist/graphql-add-middleware';
 
 const typeDefs = [`
   type User {
@@ -39,7 +39,7 @@ const resolvers = {
   },
 };
 
-describe('graphql-middleware', function () {
+describe('graphql-add-middleware', function () {
 
   beforeEach(function () {
     this.schema = makeExecutableSchema({ typeDefs, resolvers });

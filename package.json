@@ -1,11 +1,11 @@
 {
-  "name": "graphql-middleware",
+  "name": "graphql-add-middleware",
   "version": "0.0.1",
   "engines": {
     "node": "4.x"
   },
-  "description": "GraphQL middleware for resolvers",
-  "main": "dist/graphql-middleware.js",
+  "description": "GraphQL middleware for schema resolvers",
+  "main": "dist/graphql-add-middleware.js",
   "keywords": [
     "graphql",
     "middleware",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alekbarszczewski/graphql-middleware"
+    "url": "https://github.com/alekbarszczewski/graphql-add-middleware"
   },
   "author": "Alek Barszczewski <alek.barszczewski@gmail.com>",
   "license": "ISC",
