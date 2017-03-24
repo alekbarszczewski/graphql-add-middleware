@@ -1,7 +1,7 @@
 
 # graphql-add-middleware [![Build Status](https://travis-ci.org/alekbarszczewski/graphql-add-middleware.svg?branch=master)](https://travis-ci.org/alekbarszczewski/graphql-add-middleware)
 
-Easyli add middleware to GraphQL schema resolvers
+Easily add middleware to GraphQL schema resolvers
 
 ## Installation
 
