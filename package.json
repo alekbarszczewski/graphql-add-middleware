@@ -1,8 +1,8 @@
 {
   "name": "graphql-add-middleware",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
-    "node": "6.x"
+    "node": "> 6.x"
   },
   "description": "GraphQL middleware for schema resolvers",
   "main": "dist/graphql-add-middleware.js",
