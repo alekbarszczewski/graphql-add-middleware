@@ -57,7 +57,21 @@ export function addMiddleware (schema, path, fn) {
   });
 };
 
-const addMiddlewareToType = function (type, fn, { parentType, parentField }) {
+const addMiddlewareToType = function (type, fn, {
+  parentType,
+  parentField,
+  middlewaredTypes = {}
+}) {
+
+  if (type && type.name && middlewaredTypes[type.name]) {
+    // Stop going into recursion with adding middlewares
+    // on recursive types
+    return;
+  } else {
+    middlewaredTypes[type.name] = true;
+  }
+
+
   const matchesParent = parentType ? parentType === type.name : true;
   const fields = type.getFields();
   Object.keys(fields).forEach((fieldName) => {
@@ -67,7 +81,11 @@ const addMiddlewareToType = function (type, fn, { parentType, parentField }) {
     }
     const fieldType = getType(fields[fieldName].type);
     if (fieldType.getFields) {
-      addMiddlewareToType(fieldType, fn, { parentType, parentField });
+      addMiddlewareToType(fieldType, fn, {
+        parentType,
+        parentField,
+        middlewaredTypes
+      });
     }
   });
 }
