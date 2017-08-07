@@ -15,6 +15,9 @@ const typeDefs = [`
     title: String!
     author: User!
   }
+  extend type User {
+    posts: [Post]
+  }
   type Query {
     posts: [Post!]!
     user: User
