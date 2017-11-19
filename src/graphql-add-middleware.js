@@ -76,7 +76,7 @@ const addMiddlewareToType = function (type, fn, {
   const fields = type.getFields();
   Object.keys(fields).forEach((fieldName) => {
     const matchesField = parentField ? parentField === fieldName : true;
-    if (fields[fieldName].resolve && matchesField) {
+    if (fields[fieldName].resolve && matchesField && matchesParent) {
       fields[fieldName].resolve = pre(fn, fields[fieldName].resolve);
     }
     const fieldType = getType(fields[fieldName].type);
