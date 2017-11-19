@@ -212,6 +212,25 @@ describe('graphql-add-middleware', function () {
     await graphql(this.schema, query);
     expect(paths.sort()).to.eql([ 'Query.posts', 'Query.posts', 'Query.user', 'Query.user' ]);
 
+    addResolveFunctionsToSchema(this.schema, {
+      Post: {
+        title (root, args, context, info) {
+          return 'some title';
+        },
+      },
+    });
+
+    paths = [];
+
+    addMiddleware(this.schema, 'Post', async function (root, args, context, info, next) {
+      const tree = new GraphqlQueryTree(info);
+      const path = `${tree.getParentType()}.${tree.getParentField()}`;
+      paths.push(path);
+      return await next();
+    });
+    await graphql(this.schema, query);
+    expect(paths.sort()).to.eql([ 'Post.title', 'Post.title', 'Query.posts', 'Query.posts', 'Query.user', 'Query.user' ]);
+
     paths = [];
 
     await graphql(this.schema, 'mutation { test { id, name } }');
