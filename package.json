@@ -1,6 +1,6 @@
 {
   "name": "graphql-add-middleware",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "engines": {
     "node": ">=6.0.0"
   },
