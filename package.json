@@ -24,9 +24,9 @@
   "author": "Alek Barszczewski <alek.barszczewski@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "graphql": "^0.9.1",
-    "koa-compose": "^3.2.1",
-    "graphql-tools": "^0.10.1"
+    "graphql": "^0.13.1",
+    "graphql-tools": "^2.21.0",
+    "koa-compose": "^3.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
@@ -37,7 +37,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.23.0",
     "chai": "^3.5.0",
-    "graphql-query-tree": "^0.1.0",
+    "graphql-query-tree": "^0.2.3",
     "mocha": "^3.2.0"
   }
 }
