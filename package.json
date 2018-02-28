@@ -24,7 +24,6 @@
   "author": "Alek Barszczewski <alek.barszczewski@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "graphql": "^0.13.1",
     "graphql-tools": "^2.21.0",
     "koa-compose": "^3.2.1"
   },
@@ -39,5 +38,8 @@
     "chai": "^3.5.0",
     "graphql-query-tree": "^0.2.3",
     "mocha": "^3.2.0"
+  },
+  "peerDependencies": {
+    "graphql": "^0.13.1"
   }
 }
