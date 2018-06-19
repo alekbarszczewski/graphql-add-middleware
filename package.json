@@ -36,7 +36,8 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.23.0",
     "chai": "^3.5.0",
-    "graphql-query-tree": "^0.2.3",
+    "esm": "^3.0.51",
+    "graphql-query-tree": "^0.3.0",
     "mocha": "^3.2.0"
   },
   "peerDependencies": {
