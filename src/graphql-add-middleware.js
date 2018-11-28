@@ -52,8 +52,9 @@ export function addMiddleware (schema, path, fn) {
     schema.getMutationType(),
     schema.getSubscriptionType(),
   ]).filter(x => !!x);
+  let middlewaredTypes = {};
   rootTypes.forEach((type) => {
-    addMiddlewareToType(type, fn, { parentType, parentField });
+    middlewaredTypes = addMiddlewareToType(type, fn, { parentType, parentField, middlewaredTypes });
   });
 };
 
@@ -66,7 +67,7 @@ const addMiddlewareToType = function (type, fn, {
   if (type && type.name && middlewaredTypes[type.name]) {
     // Stop going into recursion with adding middlewares
     // on recursive types
-    return;
+    return middlewaredTypes;
   } else {
     middlewaredTypes[type.name] = true;
   }
@@ -88,4 +89,6 @@ const addMiddlewareToType = function (type, fn, {
       });
     }
   });
+
+  return middlewaredTypes;
 }
