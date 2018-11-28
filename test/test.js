@@ -229,13 +229,41 @@ describe('graphql-add-middleware', function () {
       return await next();
     });
     await graphql(this.schema, query);
-    expect(paths.sort()).to.eql([ 'Post.title', 'Post.title', 'Query.posts', 'Query.posts', 'Query.user', 'Query.user' ]);
+    expect(paths.sort()).to.eql([ 'Post.title', 'Query.posts', 'Query.posts', 'Query.user', 'Query.user' ]);
 
     paths = [];
 
     await graphql(this.schema, 'mutation { test { id, name } }');
     expect(paths.sort()).to.eql([]);
+  });
 
+  it('should add middleware to given field only once', async function () {
+    const query = `
+      query {
+        user { id }
+      }
+    `;
+
+    addResolveFunctionsToSchema(this.schema, {
+      Query: {
+        user (root, args, context, info) {
+          return { id: 2 };
+        },
+      },
+      User: {
+        id (root, args, context, info) {
+          return root.id;
+        },
+      }
+    });
+
+    addMiddleware(this.schema, 'User.id', async function (root, args, context, info, next) {
+      const originalId = await next();
+      return originalId + 40;
+    });
+
+    const result = await graphql(this.schema, query);
+    expect(result.data.user.id).to.eql(42);
   });
 
   it('should work with normal functions', async function () {
