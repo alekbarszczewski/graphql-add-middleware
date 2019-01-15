@@ -1,5 +1,6 @@
 *
 !dist
 !dist/**/*
+!index.d.ts
 dist/**/*.test.*
 !package.json
