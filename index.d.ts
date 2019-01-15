@@ -3,9 +3,16 @@
 
 declare module 'graphql-add-middleware' {
 
+  type middlewareFn = (root: any, args: any, context: any, info: any, next: () => Promise<any>) => Promise<any>;
+
+  export function addMiddleware (
+    schema: GraphQLSchema,
+    fn: middlewareFn,
+  ): void;
+
   export function addMiddleware (
     schema: GraphQLSchema,
     path: string,
-    fn: (root: any, args: any, context: any, info: any, next: () => Promise<any>) => any,
+    fn: middlewareFn,
   ): void;
 };
