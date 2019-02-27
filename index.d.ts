@@ -2,6 +2,7 @@
 /// <reference types="graphql" />
 
 declare module 'graphql-add-middleware' {
+  import { GraphQLSchema } from 'graphql';
 
   type middlewareFn = (root: any, args: any, context: any, info: any, next: () => Promise<any>) => Promise<any>;
 
@@ -15,4 +16,4 @@ declare module 'graphql-add-middleware' {
     path: string,
     fn: middlewareFn,
   ): void;
-};
+}
