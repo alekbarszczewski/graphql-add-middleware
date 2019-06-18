@@ -62,3 +62,7 @@ addMiddleware(schema, 'Post', async function (root, args, context, info, next) {
 addMiddleware(schema, 'Query.posts', async function (root, args, context, info, next) { ... }); // will add middleware to Query.posts
 addMiddleware(schema, 'Post.author', async function (root, args, context, info, next) { ... }); // will add middleware to Post.author
 ```
+
+## License
+
+[License](LICENSE)
