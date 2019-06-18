@@ -22,7 +22,7 @@
     "url": "https://github.com/alekbarszczewski/graphql-add-middleware"
   },
   "author": "Alek Barszczewski <alek.barszczewski@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "graphql-tools": "^2.21.0",
     "koa-compose": "^3.2.1"
