@@ -24,7 +24,6 @@
   "author": "Alek Barszczewski <alek.barszczewski@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "graphql-tools": "^2.21.0",
     "koa-compose": "^3.2.1"
   },
   "devDependencies": {
@@ -38,9 +37,10 @@
     "chai": "^3.5.0",
     "esm": "^3.0.51",
     "graphql-query-tree": "^0.3.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "graphql-tools": "4.0.7"
   },
   "peerDependencies": {
-    "graphql": "^0.13.2"
+    "graphql": "*"
   }
 }
